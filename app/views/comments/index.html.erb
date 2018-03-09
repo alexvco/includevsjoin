@@ -1,0 +1,15 @@
+<% if false %>
+<%= render @comments %>
+
+<p><%= link_to "New Comment", new_comment_path %></p>
+<% end %>
+
+
+<div>
+  <% @comments.each do |comment| %>
+    <p><%= comment.content %></p>
+    <p><%= comment.user.name %> <%= comment.user.admin? ? "(Admin)" : "" %> </p>
+    <br>
+    <br>
+  <% end %>
+</div>
